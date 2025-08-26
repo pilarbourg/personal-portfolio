@@ -496,11 +496,20 @@ b {
 
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
-  /* Reduce grid columns */
+  body, html {
+    overflow-x: hidden;   /* prevent horizontal scroll */
+    overflow-y: auto;     /* allow vertical scroll */
+    height: auto;
+  }
+
   .main-container {
     grid-template-columns: 1fr;
     padding: 1rem;
     gap: 1.5rem;
+  }
+
+  .project-card {
+    width: 90%;
   }
 
   .about-me {
