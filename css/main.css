@@ -521,6 +521,7 @@ b {
   .scroll-container {
     position: relative;
     top: 0;
+    animation: scroll-left 30s linear infinite;
   }
 
   .scroll-text span {
