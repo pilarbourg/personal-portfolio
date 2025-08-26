@@ -396,7 +396,8 @@ b {
   padding: 1rem;
 }
 
-.gradient-bg::after { /* Possible fade effect at the bottom */
+.gradient-bg::after {
+  /* Possible fade effect at the bottom */
   content: "";
   position: absolute;
   bottom: 0;
@@ -496,43 +497,53 @@ b {
 
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
-  body, html {
-    overflow-x: hidden;   /* prevent horizontal scroll */
-    overflow-y: auto;     /* allow vertical scroll */
+  /* General rule to make all containers shrink to screen width */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    overflow-x: hidden;
     height: auto;
   }
 
   .main-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
+    gap: 1.5rem;
+    height: auto; /* let height expand naturally */
+    box-shadow: none; /* optional: simplify mobile look */
+  }
+
+  .scroll-container {
+    position: relative;
+    top: 0;
+  }
+
+  .scroll-text span {
+    margin-right: 2rem;
+  }
+
+  .about-me,
+  .about-me-apps,
+  .project-archive {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
     gap: 1.5rem;
   }
 
   .project-card {
-    width: 90%;
-  }
-
-  .about-me {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem;
-  }
-
-  .about-me h1,
-  .about-me h4,
-  .about-me-apps h1,
-  .about-me-apps h2 {
-    font-size: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .map-image {
     width: 100%;
-    padding-left: 0;
-  }
-
-  .project-archive {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem;
+    padding: 0;
   }
 
   .image-stack {
@@ -541,24 +552,18 @@ b {
     padding: 0.5rem 0;
   }
 
-  .image-stack img {
-    height: 150px;
-    margin-right: 0.75rem;
-  }
-
-  .image-stack-mobile img {
-    height: 200px;
-  }
-
-  .scroll-text {
-    font-size: 0.9rem;
-    gap: 2rem;
+  .gradient-container,
+  .gradient-bg {
+    height: auto; /* allow gradient to expand */
+    min-height: 50vh; /* fallback so it's still tall */
+    padding: 2rem 1rem;
   }
 
   .overall-project-title {
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
+    gap: 0.5rem;
   }
 
   nav {
@@ -566,25 +571,17 @@ b {
     align-items: flex-start;
     padding: 1rem 1.5rem;
     height: auto;
+    gap: 0.5rem;
   }
 
   .nav-title {
     flex-direction: column;
-    gap: 0.5rem;
     align-items: flex-start;
+    gap: 0.25rem;
   }
 
   .contact-icons {
     margin-top: 0.5rem;
-  }
-
-  .about-me-apps {
-    padding: 2rem 1rem;
-  }
-
-  .gradient-bg {
-    height: auto;
-    padding: 1rem;
   }
 }
 
@@ -612,15 +609,15 @@ b {
 
   .scroll-text {
     font-size: 0.8rem;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .image-stack img {
-    height: 120px;
+    height: 180px;
   }
 
   .image-stack-mobile img {
-    height: 150px;
+    height: 200px;
   }
 
   .wave {
