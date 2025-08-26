@@ -493,3 +493,136 @@ b {
 .overall-project-title h2 {
   margin: 0;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  /* Reduce grid columns */
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .about-me {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .about-me h1,
+  .about-me h4,
+  .about-me-apps h1,
+  .about-me-apps h2 {
+    font-size: 1.5rem;
+  }
+
+  .map-image {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .project-archive {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .image-stack {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+  }
+
+  .image-stack img {
+    height: 150px;
+    margin-right: 0.75rem;
+  }
+
+  .image-stack-mobile img {
+    height: 200px;
+  }
+
+  .scroll-text {
+    font-size: 0.9rem;
+    gap: 2rem;
+  }
+
+  .overall-project-title {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    height: auto;
+  }
+
+  .nav-title {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .contact-icons {
+    margin-top: 0.5rem;
+  }
+
+  .about-me-apps {
+    padding: 2rem 1rem;
+  }
+
+  .gradient-bg {
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav h1 {
+    font-size: 1.25rem;
+  }
+
+  nav h2 {
+    font-size: 0.875rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .project-card h5 {
+    font-size: 0.9rem;
+  }
+
+  .tech-stack h4 {
+    font-size: 0.55rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .scroll-text {
+    font-size: 0.8rem;
+    gap: 1.5rem;
+  }
+
+  .image-stack img {
+    height: 120px;
+  }
+
+  .image-stack-mobile img {
+    height: 150px;
+  }
+
+  .wave {
+    height: 35px;
+  }
+
+  .sailboat-container {
+    height: 100px;
+  }
+
+  .sailboat-container img {
+    width: 60px;
+  }
+}
