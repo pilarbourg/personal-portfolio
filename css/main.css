@@ -89,45 +89,30 @@ b {
 }
 
 .about-me h1 {
+  padding: 0;
+  margin: 0;
   font-weight: 300;
   font-size: 1.75rem;
+  padding-bottom: 1rem;
 }
 
 .about-me h4 {
+  padding: 0;
+  margin: 0;
   font-weight: 200;
   font-size: 1.25rem;
 }
 
 .about-me {
   padding: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  gap: 2rem;
+  margin: 0;
+  gap: 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: #ffffff;
+  grid-template-columns: 1fr 1fr 1fr;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 20px rgba(81, 82, 98, 0.25);
 }
 
-.about-me-apps {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem;
-  padding-top: 2rem;
-  background-color: #ffffff;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 20px rgba(81, 82, 98, 0.25);
-}
-
-.about-me-apps h1 {
-  font-weight: 200;
-  font-size: 1.75rem;
-}
-
-.about-me-apps h2 {
+.about-me h2 {
   font-weight: 200;
   font-size: 1.25rem;
   padding-top: 1rem;
@@ -364,18 +349,16 @@ b {
 }
 
 .main-container {
-  gap: 2rem;
   padding: 2rem;
+  padding-bottom: 0;
   display: grid;
-  grid-template-columns: 2fr 1fr;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 20px rgba(81, 82, 98, 0.25);
 }
 
 .gradient-container {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -394,6 +377,30 @@ b {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+.gradient-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 75%,
+    /* fully white at the very bottom */ rgba(255, 255, 255, 0.8) 85%,
+    /* slightly transparent in the middle */ rgba(255, 255, 255, 0.4) 95%,
+    /* more transparent toward the top */ rgba(255, 255, 255, 0) 100%
+      /* fully transparent at the top */
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.main-container {
+  position: relative;
+  z-index: 10;
 }
 
 /* Animation keyframes */
@@ -473,7 +480,7 @@ b {
   align-items: flex-end;
   background-color: white;
   padding: 2rem;
-  padding-top: 4rem;
+  padding-top: 0rem;
   font-size: 1.5rem;
 }
 
